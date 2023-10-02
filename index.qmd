@@ -1,0 +1,17 @@
+---
+title: "Data Analytics mit Python"
+subtitle: "Mit Python und den Grundprinzipien der Datenanalyse, durch effektive Datenexploration und -visualisierung, klare und überzeugende Einsichten entdecken."
+author: ""
+date: ""
+page-layout: full
+citation: false
+code-tools: false
+sidebar: false
+toc: false
+---
+
+- TODO Details zur Website
+- TODO Details zu einzelnen Workshops
+- TODO Details zu Kontakt
+- TODO Schöne Grafik
+

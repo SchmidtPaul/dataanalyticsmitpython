@@ -1,0 +1,65 @@
+[
+  {
+    "objectID": "kapitel/index.html",
+    "href": "kapitel/index.html",
+    "title": "Die Kapitel",
+    "section": "",
+    "text": "TODO Details Struktur"
+  },
+  {
+    "objectID": "kapitel/01 kapitel.html",
+    "href": "kapitel/01 kapitel.html",
+    "title": "Mathematische Operatoren & Funktionen",
+    "section": "",
+    "text": "Python ermöglicht alle grundlegenden mathematischen Berechnungen, die auch auf einem Taschenrechner durchgeführt werden können, mit einer Syntax, die einem z.B. durch Microsoft Excel zumindest teilweise geläufig ist.\n\nSymbolische Operatoren\nDie Operatoren für Addition, Subtraktion, Multiplikation und Division sind erwartungsgemäß:\n\n\n\n10 + 3\n\n13\n\n\n\n10 - 3\n\n7\n\n\n\n10 * 3\n\n30\n\n\n\n10 / 3\n\n3.3333333333333335\n\n\n\n\nFür die Potenzierung wird ** genutzt:\n\n10 ** 3\n\n1000\n\n\nMathematische Ausdrücke in Python folgen der normalen arithmetischen Reihenfolge der Operationen, also\n\n**\n* und /\n+ und -\n\nEs können aber Klammern eingesetzt werden um eine andere Reihenfolge zu erreichen:\n\n\n\n1 + 2 * 3 ** 2\n\n19\n\n\n\n((1 + 2) * 3) ** 2\n\n81\n\n\n\n\nDer Vollständigkeit halber soll erwähnt sein, dass es weitere, nicht so gängige Operatoren gibt. Beispielsweise wird mit // erst dividiert und dann der Quotient auf die nächste ganze Zahl abgerundet, sodass 10 // 3 = 3. Mit dem Modulus-Operator % hingegen wird der Rest, der bei der Division zweier Zahlen entsteht, zurückgegeben, sodass 10 % 4 = 2.\n\n\nMathematische Funktionen\nSelbstverständlich ist es auch möglich z.B. den Logarithmus einer Zahl zu berechnet. Allerdings gibt es dafür kein Symbol, sondern eine Funktion. Diese und andere Funktionen sind im Standardmodul math enthalten, sodass wir dieses zunächst laden müssen.\n\nimport math # Das math-Modul laden\n\nStandardmäßig wird der natürliche Logarithmus von 100 berechnet, wobei die Basis des Logarithmus die Euler’sche Zahl \\(e\\) (≈ 2,718) ist. Es kann aber auch der Logarithmus zu einer beliebigen Basis berechnet werden, solange die als zweites Argument in der Funktion angegeben wird:\n\n\n\n# Logarithmus zur Basis e\nmath.log(100)\n\n4.605170185988092\n\n\n\n# Logarithmus zur Basis 10\nmath.log(100, 10) \n\n2.0\n\n\n\n\nAnalog kann auch die Exponentialfunktion (\\(e^x\\)) berechnet werden, wobei \\(e\\) wieder die Euler’sche Zahl ist. Schließlich kann auch die Quadratwurzel \\(\\sqrt(x)\\) gezogen werden:\n\n\n\nmath.exp(10) \n\n22026.465794806718\n\n\n\nmath.sqrt(9)\n\n3.0\n\n\n\n\n\n\nZahlen runden\nIn Basis-Python gibt es eine round() Funktion, mit der Zahlen standardmäßig auf die nächste ganze Zahl gerundet werden können. Mit dem zweiten Argument der Funktion kann auch auf eine bestimmte Dezimalstelle gerundet werden:\n\n\n\n# keine Nachkommastelle\nround(123.456) \n\n123\n\n\n\n# zwei Nachkommastellen\nround(123.456, 2) \n\n123.46\n\n\n\n# auf die 10er-Stelle runden\nround(123.456, -1)\n\n120.0\n\n\n\n\nEs können auch math.ceil und math.floor verwendet werden, um auf- oder abzurunden.\n\n\n\n# Aufrunden\nmath.ceil(123.456)\n\n124\n\n\n\n# Abrunden\nmath.floor(123.456)\n\n123\n\n\n\n\n\n\n\n\n\n\nZitatMit BibTeX zitieren:@online{schmidt2023,\n  author = {Paul Schmidt},\n  title = {Mathematische Operatoren \\& Funktionen},\n  date = {2023-10-02},\n  langid = {de}\n}\nBitte zitieren Sie diese Arbeit als:\nPaul Schmidt. 2023. “Mathematische Operatoren &\nFunktionen.” October 2, 2023."
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Data Analytics mit Python",
+    "section": "",
+    "text": "TODO Details zur Website\nTODO Details zu einzelnen Workshops\nTODO Details zu Kontakt\nTODO Schöne Grafik"
+  },
+  {
+    "objectID": "kapitel/02 kapitel.html",
+    "href": "kapitel/02 kapitel.html",
+    "title": "Grundlegende Datentypen",
+    "section": "",
+    "text": "Zahlen sind nur einer von vielen grundlegenden Datentypen, auf die Sie in Python stoßen werden, insbesondere wenn Sie Datenanalysen durchführen. Ein fundiertes Verständnis dieser grundlegenden Datentypen ist entscheidend, um mit Daten in Python zu arbeiten."
+  },
+  {
+    "objectID": "kapitel/02 kapitel.html#integer-ganze-zahlen",
+    "href": "kapitel/02 kapitel.html#integer-ganze-zahlen",
+    "title": "Grundlegende Datentypen",
+    "section": "Integer (Ganze Zahlen)",
+    "text": "Integer (Ganze Zahlen)\nIntegers (kurz “ints”; Ganze Zahlen), sind numerische Werte ohne Dezimalstellen (siehe Wiki). Jede positive oder negative Zahl (oder 0) ohne Dezimalstelle ist ein Integer in Python. Integers haben eine unbegrenzte Genauigkeit, was bedeutet, dass sie exakt sind. Mit der Funktion type() kann der Typ eines Python-Objekts überprüft werden:\n\ntype(12)\n\nint\n\n\nWie wir oben sehen können, ist der Typ von 12 ein “int”. Sie können auch die Funktion isinstance() verwenden, um zu überprüfen, ob ein Objekt eine Instanz eines bestimmten Typs ist:\n\nisinstance(12, int) # Überprüfen, ob 12 vom Typ \"int\" ist\n\nTrue\n\n\nDer Code bestätigt, dass 12 ein Integer (int) ist.\nInteger unterstützen alle grundlegenden mathematischen Operationen, die wir das letzte Mal behandelt haben. Wenn eine mathematische Operation mit Integer zu einem Ergebnis führt, das kein Integer ist (ein Dezimalwert), wird das Ergebnis zu einem Float:\n\n1/3\n\n0.3333333333333333\n\n\n\ntype(1/3)\n\nfloat"
+  },
+  {
+    "objectID": "kapitel/02 kapitel.html#floats-gleitkommazahlen",
+    "href": "kapitel/02 kapitel.html#floats-gleitkommazahlen",
+    "title": "Grundlegende Datentypen",
+    "section": "Floats (Gleitkommazahlen)",
+    "text": "Floats (Gleitkommazahlen)\nFloats (floating point number; Gleitkommazahlen) sind Zahlen mit Dezimalstellen (siehe Wiki). Im Gegensatz zu Integer haben Floats keine unbegrenzte Genauigkeit, da irrationale Dezimalzahlen unendlich lang sind und daher nicht im Speicher abgelegt werden können. Stattdessen wird der Wert langer Dezimalstellen vom Computer angenähert, sodass es bei langen Floats zu kleinen Rundungsfehlern kommen kann. Dieser Fehler ist so gering, dass er normalerweise nicht von Bedeutung ist, kann sich jedoch in bestimmten Fällen bei vielen wiederholten Berechnungen summieren.\nJede Zahl in Python mit einem Dezimalpunkt ist ein Float, auch wenn nach dem Dezimalpunkt keine von null verschiedenen Zahlen stehen:\n\ntype(1.0)\n\nfloat\n\n\n\nisinstance(0.33333, float)\n\nTrue\n\n\nDie in der letzten Lektion gelernten Rechenoperationen funktionieren sowohl bei Floats als auch bei Ints. Werden sowohl Floats als auch Ints im selben mathematischen Ausdruck verwendet, ist das Ergebnis ein Float:\n\n5 + 1.0 # Int + Float = Float\n\n6.0\n\n\nEin Float kann mit der Funktion int() in ein Integer umgewandelt werden:\n\nint(6.0)\n\n6\n\n\nMit der Funktion float() kann ein Integer in einen Float umgewandelt werden:\n\nfloat(6)\n\n6.0\n\n\nFloats können auch einige spezielle Werte annehmen: Inf, -Inf und NaN. Inf und -Inf stehen für Unendlichkeit und negative Unendlichkeit, und NaN steht für “not a number” und wird manchmal als Platzhalter für fehlende oder fehlerhafte numerische Werte verwendet.\n\ntype(float(\"Inf\"))\n\nfloat\n\n\n\ntype(float(\"NaN\"))\n\nfloat\n\n\nAnmerkung: Python enthält einen dritten, seltenen numerischen Datentyp “complex”, der zur Speicherung von komplexen Zahlen verwendet wird."
+  },
+  {
+    "objectID": "kapitel/02 kapitel.html#booleans",
+    "href": "kapitel/02 kapitel.html#booleans",
+    "title": "Grundlegende Datentypen",
+    "section": "Booleans",
+    "text": "Booleans\nBooleans (“bools”) sind Wahr/Falsch-Werte, die aus logischen Aussagen resultieren (siehe Wiki). In Python beginnen booleans mit einem Großbuchstaben, sodass True und False als bools erkannt werden, “true” und “false” jedoch nicht. Ein Beispiel für booleans wurde bereits gesehen, als die Funktion isinstance() oben verwendet wurde.\n\ntype(True)\n\nbool\n\n\n\nisinstance(False, bool)  # Überprüfung, ob False vom Typ bool ist\n\nTrue\n\n\nBoolesche Werte können mit logischen Ausdrücken erzeugt werden. Python unterstützt alle standardmäßigen logischen Operatoren, die man erwarten würde:\n\n20 &gt; 10 # &gt; für größer als\n\nTrue\n\n\n\n20 &lt; 5 # &lt; für kleiner als\n\nFalse\n\n\n\n20 &gt;= 20 # &gt;= und &lt;= für größer oder gleich und kleiner oder gleich\n\nTrue\n\n\n\n10 == 10 # Verwendung von == (zwei aufeinanderfolgende Gleichheitszeichen), um auf Gleichheit zu überprüfen\n\nTrue\n\n\n\n40 == 40.0  # Äquivalente ints und floats gelten als gleich\n\nTrue\n\n\n\n1 != 2 # != um auf Ungleichheit zu überprüfen; \"nicht gleich\"\n\nTrue\n\n\n\nnot False # Das Schlüsselwort \"not\" für die Negation verwenden\n\nTrue\n\n\n\n(2 &gt; 1) and (10 &gt; 11) # \"and\" für logisches Und verwenden\n\nFalse\n\n\n\n(2 &gt; 1) or (10 &gt; 11) # \"or\" für logisches Oder verwenden\n\nTrue\n\n\nÄhnlich wie bei mathematischen Ausdrücken haben logische Ausdrücke eine festgelegte Reihenfolge der Operationen. In einer logischen Aussage werden Vergleiche wie &gt;, &lt; und == zuerst ausgeführt, gefolgt von not, dann and und schließlich or (siehe Details).\nKlammern werden verwendet, um die gewünschte Reihenfolge der Operationen zu erzwingen.\n\n2 &gt; 1 or 10 &lt; 8 and not True\n\nTrue\n\n\n\n((2 &gt; 1) or (10 &lt; 8)) and (not True)\n\nFalse\n\n\nZahlen können mit der Funktion bool() in boolesche Werte umgewandelt werden. Alle Zahlen außer 0 werden zu True konvertiert:\n\nbool(1)\n\nTrue\n\n\n\nbool(0)\n\nFalse"
+  },
+  {
+    "objectID": "kapitel/02 kapitel.html#strings",
+    "href": "kapitel/02 kapitel.html#strings",
+    "title": "Grundlegende Datentypen",
+    "section": "Strings",
+    "text": "Strings\nTextdaten in Python werden als String oder str bezeichnet. Um einen String zu erstellen, umgibt man den Text mit einfachen oder doppelten Anführungszeichen:\n\ntype(\"cat\")\n\nstr\n\n\n\ntype('1')\n\nstr\n\n\nZwei Anführungszeichen direkt nebeneinander (wie '' oder \"\") ohne etwas dazwischen werden als der leere String bezeichnet. Der leere String stellt oft einen fehlenden Textwert dar.\nWährend numerische Daten und logische Daten im Allgemeinen gut handhabbar sind, können Textdaten sehr unordentlich und schwer zu bearbeiten sein. Das Säubern von Textdaten ist oft einer der mühsamsten Schritte bei der Vorbereitung von echten Datensätzen für die Analyse. In zukünftigen Lektionen wird erneut auf Strings und Funktionen eingegangen, um beim Säubern von Textdaten zu helfen."
+  },
+  {
+    "objectID": "kapitel/02 kapitel.html#none",
+    "href": "kapitel/02 kapitel.html#none",
+    "title": "Grundlegende Datentypen",
+    "section": "None",
+    "text": "None\nIn Python stellt None einen speziellen Datentyp dar, der häufig verwendet wird, um einen fehlenden Wert zu repräsentieren. Beispielsweise wird, wenn eine Funktion definiert wird, die nichts zurückgibt (keinen Ergebniswert liefert), standardmäßig None zurückgegeben.\n\ntype(None)\n\nNoneType\n\n\n\n# Definieren einer Funktion, die den Eingabewert mittels 'print()' anzeigt, jedoch keinen Wert zurückgibt:\n\ndef my_function(x):\n    print(x)\n    \nmy_function(\"hello\") == None  # The output of my_function equals None\n\nhello\n\n\nTrue"
+  }
+]

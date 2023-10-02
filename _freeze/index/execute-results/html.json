@@ -1,0 +1,11 @@
+{
+  "hash": "8177f7fc6778123a2b07ecc7ce4178d2",
+  "result": {
+    "markdown": "---\ntitle: \"Data Analytics mit Python\"\nauthor: \"\"\ndate: \"\"\npage-layout: full\ncitation: false\ncode-tools: false\nsidebar: false\ntoc: false\n---\n\nThis is a Quarto website.\n\nTo learn more about Quarto websites visit <https://quarto.org/docs/websites>.\n\n::: {.cell execution_count=1}\n``` {.python .cell-code}\n1 + 1\n```\n\n::: {.cell-output .cell-output-display execution_count=17}\n```\n2\n```\n:::\n:::\n\n\n",
+    "supporting": [
+      "index_files"
+    ],
+    "filters": [],
+    "includes": {}
+  }
+}

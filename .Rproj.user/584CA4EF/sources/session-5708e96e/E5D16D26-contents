@@ -1,0 +1,4 @@
+
+knitr::opts_chunk$set(
+  class.output = "custom-output")
+

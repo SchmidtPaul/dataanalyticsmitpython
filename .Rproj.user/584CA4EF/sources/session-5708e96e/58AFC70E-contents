@@ -1,0 +1,182 @@
+---
+title: Grundlegende Datentypen
+---
+
+Zahlen sind nur einer von vielen grundlegenden Datentypen, auf die Sie in Python stoßen werden, insbesondere wenn Sie Datenanalysen durchführen. Ein fundiertes Verständnis dieser grundlegenden Datentypen ist entscheidend, um mit Daten in Python zu arbeiten.
+
+## Integer (Ganze Zahlen)
+
+Integers (kurz "ints"; Ganze Zahlen), sind numerische Werte ohne Dezimalstellen ([siehe Wiki](https://www.wikiwand.com/de/Ganze_Zahl)). Jede positive oder negative Zahl (oder 0) ohne Dezimalstelle ist ein Integer in Python. Integers haben eine unbegrenzte Genauigkeit, was bedeutet, dass sie exakt sind. Mit der Funktion `type()` kann der Typ eines Python-Objekts überprüft werden:
+
+```{python}
+#| class.output: custom-output
+type(12)
+```
+
+Wie wir oben sehen können, ist der Typ von 12 ein "int". Sie können auch die Funktion `isinstance()` verwenden, um zu überprüfen, ob ein Objekt eine Instanz eines bestimmten Typs ist:
+
+```{python}
+isinstance(12, int) # Überprüfen, ob 12 vom Typ "int" ist
+```
+
+Der Code bestätigt, dass 12 ein Integer (`int`) ist.
+
+Integer unterstützen alle grundlegenden mathematischen Operationen, die wir das letzte Mal behandelt haben. Wenn eine mathematische Operation mit Integer zu einem Ergebnis führt, das kein Integer ist (ein Dezimalwert), wird das Ergebnis zu einem Float:
+
+```{python}
+1/3
+```
+
+```{python}
+type(1/3)
+```
+
+## Floats (Gleitkommazahlen)
+
+Floats (floating point number; Gleitkommazahlen) sind Zahlen mit Dezimalstellen ([siehe Wiki](https://www.wikiwand.com/de/Gleitkommazahl)). Im Gegensatz zu Integer haben Floats keine unbegrenzte Genauigkeit, da irrationale Dezimalzahlen unendlich lang sind und daher nicht im Speicher abgelegt werden können. Stattdessen wird der Wert langer Dezimalstellen vom Computer angenähert, sodass es bei langen Floats zu kleinen Rundungsfehlern kommen kann. Dieser Fehler ist so gering, dass er normalerweise nicht von Bedeutung ist, kann sich jedoch in bestimmten Fällen bei vielen wiederholten Berechnungen summieren.
+
+Jede Zahl in Python mit einem Dezimalpunkt ist ein Float, auch wenn nach dem Dezimalpunkt keine von null verschiedenen Zahlen stehen:
+
+```{python}
+type(1.0)
+```
+
+```{python}
+isinstance(0.33333, float)
+```
+
+Die in der letzten Lektion gelernten Rechenoperationen funktionieren sowohl bei Floats als auch bei Ints. Werden sowohl Floats als auch Ints im selben mathematischen Ausdruck verwendet, ist das Ergebnis ein Float:
+
+```{python}
+5 + 1.0 # Int + Float = Float
+```
+
+Ein Float kann mit der Funktion `int()` in ein Integer umgewandelt werden:
+
+```{python}
+int(6.0)
+```
+
+Mit der Funktion `float()` kann ein Integer in einen Float umgewandelt werden:
+
+```{python}
+float(6)
+```
+
+Floats können auch einige spezielle Werte annehmen: `Inf`, `-Inf` und `NaN`. `Inf` und `-Inf` stehen für Unendlichkeit und negative Unendlichkeit, und `NaN` steht für "not a number" und wird manchmal als Platzhalter für fehlende oder fehlerhafte numerische Werte verwendet.
+
+```{python}
+type(float("Inf"))
+```
+
+```{python}
+type(float("NaN"))
+```
+
+Anmerkung: Python enthält einen dritten, seltenen numerischen Datentyp "complex", der zur Speicherung von komplexen Zahlen verwendet wird.
+
+## Booleans
+
+Booleans ("bools") sind Wahr/Falsch-Werte, die aus logischen Aussagen resultieren ([siehe Wiki](https://www.wikiwand.com/de/Boolean)). In Python beginnen booleans mit einem Großbuchstaben, sodass `True` und `False` als bools erkannt werden, "true" und "false" jedoch nicht. Ein Beispiel für booleans wurde bereits gesehen, als die Funktion isinstance() oben verwendet wurde.
+
+```{python}
+type(True)
+```
+
+```{python}
+isinstance(False, bool)  # Überprüfung, ob False vom Typ bool ist
+```
+
+Boolesche Werte können mit logischen Ausdrücken erzeugt werden. Python unterstützt alle standardmäßigen logischen Operatoren, die man erwarten würde:
+
+```{python}
+20 > 10 # > für größer als
+```
+
+```{python}
+20 < 5 # < für kleiner als
+```
+
+```{python}
+20 >= 20 # >= und <= für größer oder gleich und kleiner oder gleich
+```
+
+```{python}
+10 == 10 # Verwendung von == (zwei aufeinanderfolgende Gleichheitszeichen), um auf Gleichheit zu überprüfen
+```
+
+```{python}
+40 == 40.0  # Äquivalente ints und floats gelten als gleich
+```
+
+```{python}
+1 != 2 # != um auf Ungleichheit zu überprüfen; "nicht gleich"
+```
+
+```{python}
+not False # Das Schlüsselwort "not" für die Negation verwenden
+```
+
+```{python}
+(2 > 1) and (10 > 11) # "and" für logisches Und verwenden
+```
+
+```{python}
+(2 > 1) or (10 > 11) # "or" für logisches Oder verwenden
+```
+
+Ähnlich wie bei mathematischen Ausdrücken haben logische Ausdrücke eine festgelegte Reihenfolge der Operationen. In einer logischen Aussage werden Vergleiche wie `>`, `<` und `==` zuerst ausgeführt, gefolgt von `not`, dann `and` und schließlich `or` ([siehe Details](https://docs.python.org/3/reference/expressions.html#operator-precedence)).
+
+Klammern werden verwendet, um die gewünschte Reihenfolge der Operationen zu erzwingen.
+
+```{python}
+2 > 1 or 10 < 8 and not True
+```
+
+```{python}
+((2 > 1) or (10 < 8)) and (not True)
+```
+
+Zahlen können mit der Funktion `bool()` in boolesche Werte umgewandelt werden. Alle Zahlen außer 0 werden zu True konvertiert:
+
+```{python}
+bool(1)
+```
+
+```{python}
+bool(0)
+```
+
+## Strings
+
+Textdaten in Python werden als String oder `str` bezeichnet. Um einen String zu erstellen, umgibt man den Text mit einfachen oder doppelten Anführungszeichen:
+
+```{python}
+type("cat")
+```
+
+```{python}
+type('1')
+```
+
+Zwei Anführungszeichen direkt nebeneinander (wie `''` oder `""`) ohne etwas dazwischen werden als der leere String bezeichnet. Der leere String stellt oft einen fehlenden Textwert dar.
+
+Während numerische Daten und logische Daten im Allgemeinen gut handhabbar sind, können Textdaten sehr unordentlich und schwer zu bearbeiten sein. Das Säubern von Textdaten ist oft einer der mühsamsten Schritte bei der Vorbereitung von echten Datensätzen für die Analyse. In zukünftigen Lektionen wird erneut auf Strings und Funktionen eingegangen, um beim Säubern von Textdaten zu helfen.
+
+## None
+
+In Python stellt `None` einen speziellen Datentyp dar, der häufig verwendet wird, um einen fehlenden Wert zu repräsentieren. Beispielsweise wird, wenn eine Funktion definiert wird, die nichts zurückgibt (keinen Ergebniswert liefert), standardmäßig `None` zurückgegeben.
+
+```{python}
+type(None)
+```
+
+```{python}
+# Definieren einer Funktion, die den Eingabewert mittels 'print()' anzeigt, jedoch keinen Wert zurückgibt:
+
+def my_function(x):
+    print(x)
+    
+my_function("hello") == None  # The output of my_function equals None
+```
+

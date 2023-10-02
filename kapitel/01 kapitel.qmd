@@ -1,0 +1,120 @@
+---
+title: Mathematische Operatoren & Funktionen
+---
+
+Python ermöglicht alle grundlegenden mathematischen Berechnungen, die auch auf einem Taschenrechner durchgeführt werden können, mit einer Syntax, die einem z.B. durch Microsoft Excel zumindest teilweise geläufig ist.
+
+# Symbolische Operatoren
+
+Die Operatoren für Addition, Subtraktion, Multiplikation und Division sind erwartungsgemäß:
+
+::: {layout-ncol="4"}
+```{python}
+10 + 3
+```
+
+```{python}
+10 - 3
+```
+
+```{python}
+10 * 3
+```
+
+```{python}
+10 / 3
+```
+:::
+
+Für die Potenzierung wird `**` genutzt:
+
+```{python}
+10 ** 3
+```
+
+Mathematische Ausdrücke in Python folgen der normalen arithmetischen Reihenfolge der Operationen, also
+
+1.  `**`
+2.  `*` und `/`
+3.  `+` und `-`
+
+Es können aber Klammern eingesetzt werden um eine andere Reihenfolge zu erreichen:
+
+::: {layout-ncol="2"}
+```{python}
+1 + 2 * 3 ** 2
+```
+
+```{python}
+((1 + 2) * 3) ** 2
+```
+:::
+
+Der Vollständigkeit halber soll erwähnt sein, dass es weitere, nicht so gängige Operatoren gibt. Beispielsweise wird mit `//` erst dividiert und dann der Quotient auf die nächste ganze Zahl abgerundet, sodass `10 // 3` = 3. Mit dem Modulus-Operator `%` hingegen wird der Rest, der bei der Division zweier Zahlen entsteht, zurückgegeben, sodass `10 % 4` = 2.
+
+# Mathematische Funktionen
+
+Selbstverständlich ist es auch möglich z.B. den Logarithmus einer Zahl zu berechnet. Allerdings gibt es dafür kein Symbol, sondern eine Funktion. Diese und andere Funktionen sind im Standardmodul `math` enthalten, sodass wir dieses zunächst laden müssen.
+
+```{python}
+import math # Das math-Modul laden
+```
+
+Standardmäßig wird der natürliche Logarithmus von 100 berechnet, wobei die Basis des Logarithmus die [Euler'sche Zahl](https://www.wikiwand.com/de/Eulersche_Zahl) $e$ (≈ 2,718) ist. Es kann aber auch der Logarithmus zu einer beliebigen Basis berechnet werden, solange die als zweites Argument in der Funktion angegeben wird:
+
+::: {layout-ncol="2"}
+```{python}
+# Logarithmus zur Basis e
+math.log(100)
+```
+
+```{python}
+# Logarithmus zur Basis 10
+math.log(100, 10) 
+```
+:::
+
+Analog kann auch die Exponentialfunktion ($e^x$) berechnet werden, wobei $e$ wieder die Euler'sche Zahl ist. Schließlich kann auch die Quadratwurzel $\sqrt(x)$ gezogen werden:
+
+::: {layout-ncol="2"}
+```{python}
+math.exp(10) 
+```
+
+```{python}
+math.sqrt(9)
+```
+:::
+
+# Zahlen runden
+
+In Basis-Python gibt es eine `round()` Funktion, mit der Zahlen standardmäßig auf die nächste ganze Zahl gerundet werden können. Mit dem zweiten Argument der Funktion kann auch auf eine bestimmte Dezimalstelle gerundet werden:
+
+::: {layout-ncol="3"}
+```{python}
+# keine Nachkommastelle
+round(123.456) 
+```
+```{python}
+# zwei Nachkommastellen
+round(123.456, 2) 
+```
+```{python}
+# auf die 10er-Stelle runden
+round(123.456, -1)
+```
+:::
+
+Es können auch `math.ceil` und `math.floor` verwendet werden, um auf- oder abzurunden.
+
+::: {layout-ncol="2"}
+```{python}
+# Aufrunden
+math.ceil(123.456)
+```
+
+```{python}
+# Abrunden
+math.floor(123.456)
+```
+:::

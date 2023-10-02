@@ -1,0 +1,91 @@
+project:
+  type: website
+  output-dir: docs
+  
+jupyter: python3
+
+website:
+  title: "Data Analytics mit Python"
+  page-navigation: true
+  
+  navbar:
+    pinned: true
+    right:
+      - text: Kapitel
+        file: kapitel/index.qmd
+      - text: Kontakt
+        href: https://schmidtpaul.github.io/
+        
+  sidebar:
+    - title: "Die Kapitel"
+      style: "docked"
+      search: false
+      background: $bm-grey
+      contents:
+        - section: "Überischt"
+          contents:
+            - kapitel/index.qmd
+        - section: "Grundlagen"
+          contents: 
+            - text: "1: Operatoren"
+              file: kapitel/01 kapitel.qmd
+            - text: "2: Datentypen"
+              file: kapitel/02 kapitel.qmd
+        
+  page-footer:
+    left: |
+      Inhalt {{< fa brands creative-commons >}} 2023 von [{{< var instructor.name >}}]({{< var instructor.url >}}), [{{< var company.name >}}]({{< var company.url >}}) <br>
+      Alle Inhalte sind lizenziert als {{< fa brands creative-commons >}}
+      {{< fa brands creative-commons-by >}} {{< fa brands creative-commons-nc >}}
+      [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/)
+    right: |
+      Erstellt mit {{< fa brands python >}} und [Quarto](https://quarto.org/)<br>
+      [Den Quellcode auf {{< fa brands github >}} GitHub anzeigen](https://github.com/SchmidtPaul)
+    border: false
+    background: $bm-green
+
+format:
+  html:
+    anchor-sections: true
+    css: styles.css
+    code-fold: false
+    code-summary: "Click to show/hide code"
+    code-overflow: scroll
+    code-copy: true
+    code-link: true
+    code-tools: true
+    citations-hover: true
+    footnotes-hover: true
+    theme: theme.scss
+    toc: true
+
+author:
+  - name:
+      given: Paul
+      family: Schmidt
+      literal: Paul Schmidt
+    orcid: 0000-0003-1528-2082
+    affiliations:
+      - name: "BioMath GmbH"
+        city: Hamburg
+        country: Germany
+        url: https://www.biomath.de/
+      - name: "& Freelancer"
+        url: https://schmidtpaul.github.io/
+
+lang: de
+author-title: "Autor"
+abstract-title: "Zusammenfassung"
+date: last-modified
+published-title: "Zuletzt aktualisiert"
+
+execute:
+  warning: false
+  message: false
+  freeze: auto
+
+fig-dpi: 300
+fig-width: 5.5
+fig-height: 3.5
+
+citation: true
